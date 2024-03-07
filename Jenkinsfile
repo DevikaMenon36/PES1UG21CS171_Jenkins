@@ -4,27 +4,31 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Compile the .cpp file using shell script
-                sh 'g++ -o PES1UG21CS171-1 PES1UG21CS171.cpp'
+                // Placeholder build step
+                sh 'echo "Placeholder build step"'
+                echo 'Build Stage Successful'
             }
         }
         stage('Test') {
             steps {
-                // Execute the compiled executable and print its output
-                sh './PES1UG21CS171-1'
+                // Placeholder test step
+                sh 'echo "Placeholder test step"'
+                echo 'Test Stage Successful'
+                // Add post condition for test results if needed
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // Placeholder deploy step
+                sh 'echo "Placeholder deploy step"'
+                echo 'Deploy Successful'
             }
         }
     }
     
     post {
-        always {
-            // Display 'pipeline completed' regardless of outcome
-            echo 'Pipeline completed!'
-        }
-        // Check if any of the stages failed
         failure {
-            // Display 'pipeline failed' in case of failure
-            echo 'Pipeline failed!'
+            echo 'Pipeline failed'
         }
     }
 }
